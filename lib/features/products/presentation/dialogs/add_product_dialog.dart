@@ -76,7 +76,7 @@ class _AddProductDialogState extends State<AddProductDialog> {
       ProductModel p = ProductModel(
         id: widget.product?.id ?? DateTime.now().millisecondsSinceEpoch,
         name: nameCtrl.text,
-        price: double.parse(priceCtrl.text),
+        price: double.parse(priceCtrl.text.replaceAll(',', '.')),
         inStock: int.parse(inStockCtrl.text),
         imagePath: addPhotoWidgetKey.currentState!.selectedImage!.path,
       );
